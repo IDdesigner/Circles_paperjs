@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Circles</title>
+    <link rel="stylesheet" type="text/css" href="css/circles.css">
+    <!-- <script type="text/javascript" src="js/paper-full.js"></script> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.9.25/paper-full.min.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+
+      for (var i = 0; i < 25; i++) {
+        var rX = Math.floor(Math.random() * view.size.width);
+        var rY = Math.floor(Math.random() * view.size.height);
+        var rR = Math.floor(Math.random() * 100);
+        var rColor = Math.random();
+        var gColor = Math.random();
+        var bColor = Math.random();
+        var alphaColor = Math.random();
+        var circle = new Path.Circle(new Point(rX, rY), rR);
+        circle.fillColor = new Color(rColor, gColor,bColor, alphaColor);
+      }
+
+      for (var i = 0; i < 20; i++) {
+        for (var j = 0; j < 20; j++) {
+          var myCircle = new Path.Circle(new Point(i + i * 100, j + j * 100), 3);
+          myCircle.fillColor = 'red';
+        }
+      }
+
+
+  </script>
+  </head>
+  <body>
+    <canvas id="myCanvas" resize></canvas>
+  </body>
+</html>
